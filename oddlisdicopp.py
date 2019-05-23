@@ -136,10 +136,19 @@ print(min(difcountlist2))
 
 if max(difcountlist2) > min(difcountlist2):     ## if dif cout list is greater than min of that list you can call it odd one out
     print("there is an odd one out")
-    
+
+oddOneOut = []    
 for item in oddlist2:
     if item.dc > min(difcountlist2):
         print(item.name+' is an odd one out')
+        oddOneOut.append(item)
+        
+       
+for oddone in oddOneOut:
+    
+    for item in set(oddone.diflist):
+        if oddone.diflist.count(item) >=3:
+            print("{} is the odd one out because it is {}".format(oddone.name,item))
     
  
     
